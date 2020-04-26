@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 1 Homework</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      const nameOne = prompt("Enter a name");
+      const nameTwo = prompt("Enter another name");
+      const verbOne = prompt("Enter a verb");
+      const verbTwo = prompt("Enter another verb");
+      const verbThree = prompt("And one more verb");
+      const adjOne = prompt("Enter an adjective");
+      const adjTwo = prompt("Enter another adjective");
+      const adjThree = prompt("Enter one more adjective");
+
+      let out =
+        nameOne +
+        " and " +
+        nameTwo +
+        " are " +
+        verbOne +
+        " and " +
+        verbTwo +
+        ". </br> ";
+      out += "Then they see their friend, who is " + adjThree + ". </br> ";
+      out +=
+        nameOne +
+        " is " +
+        adjOne +
+        " and " +
+        nameTwo +
+        " is " +
+        adjTwo +
+        ". </br> ";
+      out += "And their friend is still " + adjThree + ". </br> ";
+
+      document.getElementById("output").innerHTML = out;
+    </script>
+  </body>
+</html>
