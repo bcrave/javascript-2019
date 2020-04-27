@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab #2 B</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      const number = prompt("Enter a number: ");
+
+      let out = parseInt(number) + "<br/>";
+      out += parseInt(number) + 10 + "<br/>";
+      out += parseInt(number) + 20 + "<br/>";
+      out += parseInt(number) + 50 + "<br/>";
+      out += parseInt(number) + 1568;
+
+      document.getElementById("output").innerHTML = out;
+    </script>
+  </body>
+</html>
