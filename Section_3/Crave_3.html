@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      let operand1 = prompt("Enter number: ");
+      let operand2 = prompt("Enter another number: ");
+      // What is the sum of operand1 and operand2?
+      let out = operand1 + operand2 + "<br/>";
+      // What is the result if you subtract operand2 from operand1?
+      out += operand2 - operand1 + "<br/>";
+      // What is the result if you multiple operand1 by operand2?
+      out += operand1 * operand2 + "<br/>";
+      // Is operand1 equal to operand2?
+      out += (operand1 == operand2) + "<br/>";
+      // Is operand1 smaller than operand2?
+      out += (operand1 < operand2) + "<br/>";
+      // Can you divide Operand2 evenly in to operand1?
+      out += (operand1 % operand2) + "<br/>";
+
+      document.getElementById("output").innerHTML = out;
+    </script>
+  </body>
+</html>
