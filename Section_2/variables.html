@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+  </head>
+  <body>
+    <div id="out"></div>
+    <script>
+      const age = 27;
+      const status = -10;
+      const gpa = 2.0;
+
+      let output = "";
+      output += "Age: " + age;
+      output += "<br/>";
+      output += "Status: " + status;
+      output += "<br/>";
+      output += "GPA: " + gpa;
+
+      const fullName = "Brendon Crave";
+
+      document.getElementById("out").innerHTML = fullName + "<br/>" + output;
+    </script>
+  </body>
+</html>
