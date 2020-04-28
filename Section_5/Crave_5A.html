@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 5A</title>
+  </head>
+  <body>
+    <div id="output1">
+      <h3>Challenge 1</h3>
+    </div>
+    <div id="output2">
+      <h3>Challenge 2</h3>
+    </div>
+
+    <script>
+      let count = 1;
+      let numOfStars;
+      let star = "*";
+
+      do {
+        if (count <= 10) {
+          numOfStars = count;
+          document.getElementById("output1").innerHTML +=
+            star.repeat(numOfStars) + "<br/>";
+        } else {
+          numOfStars = 20 - count;
+          document.getElementById("output1").innerHTML +=
+            star.repeat(numOfStars) + "<br/>";
+        }
+        count++;
+      } while (count <= 20);
+
+      let starScore = "*_";
+      let rows = 4;
+      let cols = 6;
+
+      for (let i = 1; i <= rows; i++) {
+        document.getElementById("output2").innerHTML += "<br/>";
+        for (let j = 1; j <= cols; j++) {
+          document.getElementById("output2").innerHTML += starScore;
+        }
+      }
+    </script>
+  </body>
+</html>

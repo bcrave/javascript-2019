@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do While</title>
+  </head>
+  <body>
+    <h2>Numbers divisible by 3...</h2>
+    <div id="output"></div>
+
+    <script>
+      var x = 100;
+      do {
+        if (x % 3 == 0) {
+          document.getElementById("output").innerHTML += x + " ";
+        }
+        x--;
+      } while (x > 0);
+    </script>
+  </body>
+</html>
