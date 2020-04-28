@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      num1 = prompt("Enter number.");
+      num2 = prompt("Enter another number.");
+      operator = prompt("Enter operator.");
+      let result;
+
+      if (operator == "+") {
+        result = num1 + num2;
+      } else if (operator == "-") {
+        result = num1 - num2;
+      } else if (operator == "*") {
+        result = num1 * num2;
+      } else if (operator == "/") {
+        result = num1 / num2;
+      } else if (operator == num1 % num2) {
+        result = num1 % num2;
+      } else {
+        result = "Invalid Operator";
+      }
+
+      out = num1 + " " + operator + " " + num2 + " = " + result;
+
+      document.getElementById("output").innerHTML = out;
+    </script>
+  </body>
+</html>
