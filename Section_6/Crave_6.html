@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+    <div id="output4"></div>
+    <script>
+      var gpas = [];
+      var theGpa = "";
+
+      while (theGpa != "XXX") {
+        theGpa = prompt("Enter a GPA or XXX to Stop");
+        if (theGpa != "XXX") {
+          gpas.push(theGpa);
+        }
+      }
+
+      let sorted = gpas.sort();
+      for (let i = 0; i < sorted.length; i++) {
+        document.getElementById("output").innerHTML += sorted[i] + "<br/>";
+      }
+      document.getElementById("output").innerHTML += "<br/>";
+
+      // get average
+      let total = 0;
+      for (let i = 0; i < gpas.length; i++) {
+        total += parseInt(gpas[i]);
+      }
+      let average = total / gpas.length;
+      document.getElementById("output2").innerHTML =
+        "The class average GPA is " + average + "<br/>";
+      document.getElementById("output2").innerHTML += "<br/>";
+
+      //   first and last
+      let first = sorted[0];
+      let last = sorted[sorted.length - 1];
+
+      document.getElementById("output3").innerHTML =
+        "The lowest GPA is " + first + " and the highest is " + last + "<br/>";
+      document.getElementById("output2").innerHTML += "<br/>";
+
+      // outstanding GPA's
+      let outstanding = [];
+      for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] > 3.4) {
+          outstanding.push(sorted[i]);
+        }
+      }
+      document.getElementById("output4").innerHTML =
+        "Our outstanding students have GPA's of " + outstanding.sort();
+    </script>
+  </body>
+</html>
