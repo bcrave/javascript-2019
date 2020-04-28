@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Half Grades</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      var grade = prompt("Enter a numerical grade (0-100)");
+      var letterGrade;
+
+      if (grade >= 97) {
+        letterGrade = "A+";
+      } else if (grade >= 93 && grade <= 96) {
+        letterGrade = "A";
+      } else if (grade >= 90 && grade <= 92) {
+        letterGrade = "A-";
+      } else if (grade >= 87 && grade <= 89) {
+        letterGrade = "B+";
+      } else if (grade >= 83 && grade <= 86) {
+        letterGrade = "B";
+      } else if (grade >= 80 && grade <= 82) {
+        letterGrade = "B-";
+      } else if (grade >= 77 && grade <= 79) {
+        letterGrade = "C+";
+      } else if (grade >= 73 && grade <= 76) {
+        letterGrade = "C";
+      } else if (grade >= 70 && grade <= 72) {
+        letterGrade = "C-";
+      } else if (grade >= 67 && grade <= 69) {
+        letterGrade = "D+";
+      } else if (grade >= 63 && grade <= 66) {
+        letterGrade = "D";
+      } else if (grade >= 60 && grade <= 62) {
+        letterGrade = "D-";
+      } else {
+        letterGrade = "F";
+      }
+      document.getElementById("output").innerHTML =
+        "<h2>Letter Grade: " + letterGrade + "</h2>";
+    </script>
+  </body>
+</html>
