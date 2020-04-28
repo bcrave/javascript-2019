@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debug</title>
+  </head>
+  <body>
+    <div id="out"></div>
+    <script>
+      let factor = 3;
+      let output = "";
+
+      function init() {
+        const maxValue = 100;
+        const minValue = 0;
+
+        for (let x = maxValue; x > minValue; x--) {
+          if (x % factor == 0) {
+            output += x;
+            output += "<br/>";
+          }
+        }
+      }
+
+      init();
+
+      document.getElementById("out").innerHTML =
+        "Factors of " + factor + ":<br/> ";
+      document.getElementById("out").innerHTML += output;
+    </script>
+  </body>
+</html>
