@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 9</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      const toDoList = [];
+      let out = "";
+
+      const todo = () => "<h1>TO-DO:</h1>";
+
+      function addTodos(...todos) {
+        for (let i = 0; i < todos.length; i++) {
+          toDoList.push(todos[i]);
+        }
+        for (let i = 0; i < toDoList.length; i++) {
+          out += "<p>" + toDoList[i] + "</p>";
+        }
+      }
+
+      addTodos("Do dishes", "Clean room", "Call mom", "Learn javascript");
+      document.getElementById("output").innerHTML = todo() + out;
+    </script>
+  </body>
+</html>
