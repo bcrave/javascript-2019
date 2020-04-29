@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debug</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      let message = "";
+      let addParagraphs = function (...params) {
+        for (let i = 0; i < params.length; i++) {
+          message += params[i];
+        }
+        return message;
+      };
+      document.getElementById("output").innerHTML = addParagraphs(
+        "<h1>Welcome!</h1>",
+        "<p>We're very glad to have you in this course.</p>",
+        "<p>Feel free to ask us any questions!</p>"
+      );
+    </script>
+  </body>
+</html>
