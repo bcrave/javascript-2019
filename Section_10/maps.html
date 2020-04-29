@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      let team = new Map();
+      team.set("pitcher", "CC Sabathia");
+      team.set("catcher", "Gary Sanchez");
+      team.set("centerfield", "Brett Gardener");
+      team.set("shortstop", "Didi Gregorius");
+
+      let goodSongs = new Map();
+      goodSongs
+        .set("Journey", "Faithfully")
+        .set("REO", "Keep on Rolling")
+        .set("Scandal", "The Warrior")
+        .set("The Cure", "Pictures of you")
+        .set("Rolling Stones", "Angie")
+        .set("Mr. Mister", "Kyrie");
+
+      // class constructor
+      let family = new Map([
+        ["mother", "Joan"],
+        ["father", "Rick"],
+        ["brother", "Brett"],
+        ["sister-in-law", "Kerry"],
+        ["cousin", "Joyce"],
+      ]);
+
+      for (let r of family.entries()) {
+        alert(r);
+      }
+
+      //   other methods include .keys() and .values()
+    </script>
+  </body>
+</html>
