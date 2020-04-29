@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Small Talk</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      // anonymous
+      let helloAnon = function (name) {
+        return "Hello, " + name;
+      };
+      // function constructor
+      let helloConstruct = new Function("name", "return('Hello, ' + name)");
+      // lambda
+      let helloLambda = (name) => "Hello " + name;
+
+      let out = helloAnon("Brendon") + "<br/>";
+      out += helloConstruct("Brendon") + "<br/>";
+      out += helloLambda("Brendon") + "<br/>";
+
+      document.getElementById("output").innerHTML = out;
+    </script>
+  </body>
+</html>
