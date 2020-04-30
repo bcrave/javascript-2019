@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 11</title>
+  </head>
+  <body>
+    <button id="number">Get a number</button>
+    <button id="bingo">BINGO</button>
+
+    <div id="output"></div>
+
+    <script>
+      let numbers = new Set()
+        .add("B1")
+        .add("B2")
+        .add("B3")
+        .add("B4")
+        .add("B5")
+        .add("B6")
+        .add("B7")
+        .add("B8")
+        .add("B9")
+        .add("B10")
+        .add("B11")
+        .add("B12")
+        .add("B13")
+        .add("B14")
+        .add("B15")
+        .add("I16")
+        .add("I17")
+        .add("I18")
+        .add("I19")
+        .add("I20")
+        .add("I21")
+        .add("I22")
+        .add("I23")
+        .add("I24")
+        .add("I25")
+        .add("I26")
+        .add("I27")
+        .add("I28")
+        .add("I29")
+        .add("I30")
+        .add("N31")
+        .add("N32")
+        .add("N33")
+        .add("N35")
+        .add("N35")
+        .add("N36")
+        .add("N37")
+        .add("N38")
+        .add("N39")
+        .add("N40")
+        .add("N41")
+        .add("N42")
+        .add("N43")
+        .add("N44")
+        .add("N45")
+        .add("G46")
+        .add("G47")
+        .add("G48")
+        .add("G49")
+        .add("G50")
+        .add("G51")
+        .add("G52")
+        .add("G53")
+        .add("G54")
+        .add("G55")
+        .add("G56")
+        .add("G57")
+        .add("G58")
+        .add("G59")
+        .add("G60")
+        .add("O61")
+        .add("O62")
+        .add("O63")
+        .add("O64")
+        .add("O65")
+        .add("O66")
+        .add("O67")
+        .add("O68")
+        .add("O69")
+        .add("O70")
+        .add("O71")
+        .add("O72")
+        .add("O73")
+        .add("O74")
+        .add("O75");
+
+      let usedNumbers = new Set();
+
+      const GETNUMBER = document.getElementById("number");
+      const BINGO = document.getElementById("bingo");
+      let numbersIndex = 0;
+      let out;
+
+      GETNUMBER.onclick = function () {
+        numbersIndex = Math.floor(Math.random() * numbers.size);
+        usedNumbers.add(Array.from(numbers)[numbersIndex]);
+        numbers.delete(Array.from(numbers)[numbersIndex]);
+
+        for (let i = 0; i < usedNumbers.size; i++) {
+          out = Array.from(usedNumbers)[i] + "<br/>";
+        }
+        document.getElementById("output").innerHTML = out;
+      };
+
+      BINGO.onclick = function () {
+        out = "";
+        for (let i = 0; i < usedNumbers.size; i++) {
+          out += Array.from(usedNumbers)[i] + " | ";
+          numbers.add(Array.from(usedNumbers)[i]);
+        }
+        usedNumbers.clear;
+        document.getElementById("output").innerHTML = out;
+        usedNumbers.clear();
+      };
+    </script>
+  </body>
+</html>
