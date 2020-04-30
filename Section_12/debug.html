@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debug</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      const person = {
+        firstName: "Tom",
+        lastName: "Green",
+      };
+
+      function welcome(object) {
+        return `Greetings, I'm ${object.firstName} ${object.lastName}`;
+      }
+
+      console.log(welcome(person));
+    </script>
+  </body>
+</html>
