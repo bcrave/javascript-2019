@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 12</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      let madLib = {
+        A: prompt("Enter a piece of clothing."),
+        B: prompt("Enter a body part."),
+        C: prompt("Enter a second body part."),
+        D: prompt("Enter an infinitive verb."),
+        E: prompt("Enter a third body part."),
+        F: prompt("Enter a second infinitive verb."),
+        G: prompt("Enter a plural noun."),
+        H: prompt("Enter a third infinitive verb."),
+        I: prompt("Enter a second plural noun."),
+      };
+
+      console.log(
+        `
+        How to do the Floss Dance:
+
+        1 ) Put on some music  
+        2 ) Put on a ${madLib.A} ( optional )  
+        3 ) Stand with your ${madLib.B} ever so slightly bent  
+        4 ) Put your hands in fists  
+        5 ) Place your ${madLib.C}, relaxed, at the side of your body  
+        6 ) Begin to ${madLib.D} your ${madLib.E} left and right around your torso in the opposite direction to your hips  
+        7 ) Keep doing it and increase speed and ${madLib.F} ${madLib.G} occasionally for effect
+        After building confidence, you can also ${madLib.H} ${madLib.I} with your arms 
+        `
+      );
+    </script>
+  </body>
+</html>
