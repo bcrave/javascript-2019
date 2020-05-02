@@ -8,23 +8,23 @@ class Vehicle {
   }
 
   info() {
-    alert(
-      `Color: ${this._color}, Direction: ${this._direction}, Current Speed: ${this._currentSpeed}, Top Speed: ${this._topSpeed}`
-    );
+    let info = `Vehicle:
+    Color: ${this._color}, Direction: ${this._direction}, Current Speed: ${this._currentSpeed}, Top Speed: ${this._topSpeed}`;
+    console.log(info);
   }
   turnOn() {
     this._engineStarted = true;
-    alert("Vroom vroom");
+    console.log("vroom vroom");
   }
 
   turnOff() {
     this._engineStarted = false;
-    alert("Engine stopped");
+    console.log("Engine stopped");
   }
 
   accelerate(num) {
     this._currentSpeed += num;
-    alert(
+    console.log(
       "You excellerated by " +
         num +
         " MPH.  Current speed is now " +
@@ -34,24 +34,32 @@ class Vehicle {
 
   brake(num) {
     this._currentSpeed -= num;
-    alert("You braked. Current speed is now " + this._currentSpeed);
+    console.log("You braked. Current speed is now " + this._currentSpeed);
   }
 
   turnLeft(degrees) {
-    this._direction = degrees;
-    alert("You turned " + degrees + " to the left.");
+    if (degrees > 0 && degrees < 360) {
+      this._direction = degrees;
+      console.log("You turned " + degrees + " to the left.");
+    } else {
+      console.log("No driving in circles.");
+    }
   }
 
   turnRight(degrees) {
-    this._direction = degrees;
-    alert("You turned " + degrees + " to the right.");
+    if (degrees > 0 && degrees < 360) {
+      this._direction = degrees;
+      console.log("You turned " + degrees + " to the right.");
+    } else {
+      console.log("No driving in circles.");
+    }
   }
 
   set direction(newDirection) {
-    if (newDirection > 0 || newDirection < 360) {
+    if (newDirection > 0 && newDirection < 360) {
       this._direction = newDirection;
     } else {
-      alert("No driving in circles.");
+      console.log("No driving in circles.");
     }
   }
 }
@@ -61,6 +69,12 @@ class Bus extends Vehicle {
     super(color, direction, currentSpeed, topSpeed);
     this._numberOfSeats = numberOfSeats;
   }
+
+  info() {
+    let info = `Bus:
+    Color: ${this._color}, Direction: ${this._direction}, Current Speed: ${this._currentSpeed}, Top Speed: ${this._topSpeed}, Number of Seats: ${this._numberOfSeats}`;
+    console.log(info);
+  }
 }
 
 class Ambulance extends Vehicle {
@@ -69,11 +83,19 @@ class Ambulance extends Vehicle {
     this._sirenOn = false;
   }
 
+  info() {
+    let info = `Ambulance:
+    Color: ${this._color}, Direction: ${this._direction}, Current Speed: ${this._currentSpeed}, Top Speed: ${this._topSpeed}, Number of Seats: ${this._numberOfSeats}`;
+    console.log(info);
+  }
+
   sirenOn() {
     this._sirenOn = true;
+    console.log("WEEWOOWEEWOO!!");
   }
 
   sirenOff() {
     this._sirenOff = false;
+    console.log("Siren off");
   }
 }

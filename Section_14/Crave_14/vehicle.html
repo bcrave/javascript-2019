@@ -9,9 +9,36 @@
     <div id="output"></div>
     <script src="./vehicle.js"></script>
     <script>
-      let vwBug = new Vehicle("yellow", 0, 0, 150);
+      let vwBug = new Vehicle("Blue", 0, 0, 150);
+      let magicSchoolBus = new Bus("Yellow", 0, 0, 100, 50);
+      let ambulance = new Ambulance("White", 0, 0, 200);
 
-      vwBug.turnRight(4000);
+      vwBug.info();
+      vwBug.turnOn();
+      vwBug.accelerate(50);
+      vwBug.brake(30);
+      vwBug.turnLeft(90);
+      vwBug.turnRight(180);
+      vwBug.turnLeft(360);
+      vwBug.direction = 360;
+
+      console.log("-----------");
+
+      magicSchoolBus.info();
+      magicSchoolBus.turnOn();
+      magicSchoolBus.accelerate(100);
+      magicSchoolBus.turnLeft(180);
+      magicSchoolBus.turnRight(180);
+
+      console.log("-----------");
+
+      ambulance.info();
+      ambulance.turnOn();
+      ambulance.sirenOff();
+      ambulance.accelerate(200);
+      ambulance.brake(200);
+      ambulance.sirenOff();
+      ambulance.turnOff();
     </script>
   </body>
 </html>
