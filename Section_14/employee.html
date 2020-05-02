@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script src="./employee.js"></script>
+    <script>
+      let scott = new Employee(
+        "Scott",
+        "Wilson",
+        "090-00-0000",
+        "accountant",
+        36.5
+      );
+
+      let bob = new PTEmployee(
+        "Bob",
+        "Johnson",
+        "080-00-0000",
+        "driver",
+        18,
+        16
+      );
+
+      alert(bob.info());
+      bob.salary = 0;
+    </script>
+  </body>
+</html>
