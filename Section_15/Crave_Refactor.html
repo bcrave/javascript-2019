@@ -1,0 +1,41 @@
+<form id="form" method="post">
+  <label for="width">Height:</label><br />
+  <input type="number" id="height" name="height" /><br />
+  <label for="width">Width:</label><br />
+  <input type="number" id="width" name="width" /><br /><br />
+  <input type="submit" value="Submit" id="submit" /><br /><br />
+  <label for="checkbox">Grayscale:</label><br />
+  <input type="checkbox" id="checkbox" />
+</form>
+<img src="" id="image-holder" />
+<script>
+  const form = document.getElementById("form");
+  const img = document.getElementById("image-holder");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const height = document.getElementById("height").value;
+    const width = document.getElementById("width").value;
+
+    loadImage(height, width);
+  });
+
+  const loadImage = (height, width) =>
+    new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => {
+        img.src = getImageUrl(height, width);
+      };
+      image.onerror = () => alert("Could not load image");
+      image.src = getImageUrl(height, width);
+    });
+
+  const getImageUrl = (height, width) => {
+    const checkBox = document.getElementById("checkbox");
+    if (checkbox.checked == true) {
+      return `https://picsum.photos/${height}/${width}.jpg?grayscale`;
+    } else {
+      return `https://picsum.photos/${height}/${width}.jpg`;
+    }
+  };
+</script>

@@ -8,40 +8,44 @@
   <body>
     <h2>Lorem Picsum</h2>
 
-    <form>
+    <form id="form">
       <label for="width">Height:</label><br />
       <input type="text" id="height" name="height" /><br />
       <label for="width">Width:</label><br />
       <input type="text" id="width" name="width" /><br /><br />
-      <input type="submit" value="Submit" onclick="getHeightWidth()" />
+      <input type="submit" value="Submit" id="submit" />
+      <input type="checkbox" id="checkbox" />
     </form>
     <div id="image-holder"></div>
     <script>
-      const getHeightWidth = () => {
-        let height = document.getElementById("height");
-        let width = document.getElementById("width");
+      let form = document.getElementById("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let height = document.getElementById("height").value;
+        let width = document.getElementById("width").value;
 
-        console.log(height);
-        console.log(width);
-      };
-
-      imgPromise = new Promise((resolve, reject) => {
-        img = new Image();
-        img.addEventListener("load", resolve(img));
-        img.addEventListener("error", reject("Could not load image"));
-        img.src = `https://picsum.photos/${height}/${width}/?random`;
-        console.log(img.src);
-      });
-
-      imgPromise
-        .then((fromResolve) => {
-          console.log("The image has loaded. Yay!");
-          let node = document.getElementById("image-holder");
-          node.appendChild(img);
-        })
-        .catch((fromReject) => {
-          console.log(fromReject);
+        imgPromise = new Promise((resolve, reject) => {
+          img = new Image();
+          img.addEventListener("load", () => resolve(img));
+          img.addEventListener("error", () => reject("Could not load image"));
+          const checkBox = document.getElementById("checkbox");
+          if (checkBox.checked == true) {
+            img.src = `https://picsum.photos/${height}/${width}.jpg?grayscale`;
+          } else {
+            img.src = `https://picsum.photos/${height}/${width}.jpg`;
+          }
         });
+
+        imgPromise
+          .then((img) => {
+            console.log("The image has loaded. Yay!");
+            let node = document.getElementById("image-holder");
+            node.appendChild(img);
+          })
+          .catch((fromReject) => {
+            console.log(fromReject);
+          });
+      });
     </script>
   </body>
 </html>
